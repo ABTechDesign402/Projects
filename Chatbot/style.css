@@ -1,0 +1,187 @@
+/* Chatbot Container Styles */
+#chatbot-container {
+  width: 350px;
+  height: 500px;
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  display: none; /* Initially hidden */
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+/* Chatbot Header */
+#chatbot-header {
+  background: #002060; /* Blue color from the logo */
+  color: white;
+  padding: 10px;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Close Button */
+#chatbot-header button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Chatbot Messages */
+#chat-body {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  background: #f7f7f7;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Typing indicator */
+#typing-indicator {
+  display: none;
+  color: #1f4788;
+  font-style: italic;
+  margin: 5px;
+}
+
+/* Chatbot Input Section */
+#chatbot-input {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+}
+
+#user-input {
+  flex: 1;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#send-btn {
+  background: #f4c542; /* Yellow from the logo */
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+/* Chatbot Toggle Button */
+#chatbot-toggle {
+  width: 60px;
+  height: 60px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #002060; /* Blue color from the logo */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  z-index: 1001;
+}
+
+#chatbot-toggle img {
+  width: 30px;
+  height: 30px;
+}
+
+
+
+/* Chat Message Styles */
+.message-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.message-container img.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.bot-message {
+  background: #e0e0e0;
+  color: #000;
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 70%;
+  word-wrap: break-word;
+}
+
+.user-message {
+  background: #f4c542; /* Yellow */
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 70%;
+  word-wrap: break-word;
+  margin-left: auto;
+}
+
+/* responsive code */
+/* Add responsive styles */
+@media (max-width: 600px) {
+  #chatbot-container {
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    right: 0;
+    border-radius: 0;
+  }
+
+  #chatbot-header {
+    font-size: 16px;
+    padding: 8px;
+  }
+
+  #user-input {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  #send-btn {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .bot-message, .user-message {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+
+/* Add hover effect for toggle button */
+#chatbot-toggle:hover {
+  background: #001d4f; /* Darker shade of blue */
+  transform: scale(1.1);
+  transition: 0.3s ease-in-out;
+}
+
+/* Add hover effect for close button */
+#chatbot-header button:hover {
+  color: #f4c542; /* Yellow */
+  transition: 0.3s ease-in-out;
+}
+
+/* Updated close button icon */
+#chatbot-header button {
+  font-size: 18px;
+  cursor: pointer;
+}

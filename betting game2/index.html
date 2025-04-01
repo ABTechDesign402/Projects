@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplayer Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-grid">
+
+            <div class="top-row">
+                <div class="team-box"><img src="images/img1.png" alt="Logo 1"></div>
+                <div class="team-box"><img src="images/img2.png" alt="Logo 2"></div>
+                <div class="team-box"><img src="images/img3.png" alt="Logo 3"></div>
+                <div class="team-box"><img src="images/img4.png" alt="Logo 4"></div>
+                <div class="team-box"><img src="images/img5.png" alt="Logo 5"></div>
+                <div class="team-box"><img src="images/img1.png" alt="Logo 6"></div>
+                <div class="team-box"><img src="images/img2.png" alt="Logo 7"></div>
+                <div class="team-box"><img src="images/img3.png" alt="Logo 8"></div>
+                <div class="team-box"><img src="images/img4.png" alt="Logo 9"></div>
+            </div>
+
+         
+            <div class="right-column">
+                <div class="team-box"><img src="images/img3.png" alt="Logo 13"></div>
+                <div class="team-box"><img src="images/img4.png" alt="Logo 14"></div>
+                <div class="team-box"><img src="images/img5.png" alt="Logo 15"></div>
+            </div>
+
+        
+            <div class="center-area">
+                <div class="leftside-numberboxes">
+                    <div class="bet-box">100</div>
+                    <div class="bet-box">210</div>
+                    <div class="bet-box">410</div>
+                    <div class="bet-box">530</div>
+                </div>
+                <div class="timer-box">
+                    <span id="timer">10</span>s
+                </div>
+                <div class="rightside-numberboxes">
+                    <div class="bet-box">880</div>
+                    <div class="bet-box">900</div>
+                    <div class="bet-box">1670</div>
+                    <div class="bet-box">1640</div>
+                </div>
+            </div>
+
+         
+            <div class="bottom-row">
+                <div class="team-box"><img src="images/img1.png" alt="Logo 16"></div>
+                <div class="team-box"><img src="images/img2.png" alt="Logo 17"></div>
+                <div class="team-box"><img src="images/img3.png" alt="Logo 18"></div>
+                <div class="team-box"><img src="images/img4.png" alt="Logo 19"></div>
+                <div class="team-box"><img src="images/img5.png" alt="Logo 20"></div>
+                <div class="team-box"><img src="images/img1.png" alt="Logo 21"></div>
+                <div class="team-box"><img src="images/img2.png" alt="Logo 22"></div>
+                <div class="team-box"><img src="images/img3.png" alt="Logo 23"></div>
+                <div class="team-box"><img src="images/img4.png" alt="Logo 24"></div>
+            </div>
+
+         
+            <div class="left-column">
+                <div class="team-box"><img src="images/img5.png" alt="Logo 10"></div>
+                <div class="team-box"><img src="images/img1.png" alt="Logo 11"></div>
+                <div class="team-box"><img src="images/img2.png" alt="Logo 12"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="start-betting-prompt" class="game-prompt">Start Betting</div>
+    <div id="stop-betting-prompt" class="game-prompt">Stop Betting</div>
+    <div id="winner-prompt" class="game-prompt">Winner!</div>
+    <div id="animation-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Change Animation</title>
+    <style>
+      body {
+
+    font-family: Arial, sans-serif;
+
+    text-align: center;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button.active {
+    background-color: #ffcc00; /* বাটন ক্লিক করার পর হলুদ রঙ */
+}
+
+.box-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    background-color: lightgray;
+    transition: background-color 1s;
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <button id="place1" class="place-button">Place1</button>
+        <button id="place2" class="place-button">Place2</button>
+
+        <div id="place1Boxes" class="box-container" style="display: none;">
+            <div class="box" id="box1"></div>
+            <div class="box" id="box2"></div>
+            <div class="box" id="box3"></div>
+        </div>
+
+        <div id="place2Boxes" class="box-container" style="display: none;">
+            <div class="box" id="box1">p2</div>
+            <div class="box" id="box2">p2</div>
+            <div class="box" id="box3">p2</div>
+        </div>
+    </div>
+
+    <script>
+      document.getElementById("place1").addEventListener("click", function() {
+    setActiveButton(this);
+    showPlace1Boxes();
+    // hideButton("place1");
+    runPlace1Animation();
+});
+
+document.getElementById("place2").addEventListener("click", function() {
+    setActiveButton(this);
+    showPlace1Boxes();
+    // hideButton("place2");
+    runPlace2Animation();
+});
+
+function setActiveButton(button) {
+    // Remove active class from all buttons
+    const buttons = document.querySelectorAll('.place-button');
+    buttons.forEach(btn => btn.classList.remove('active'));
+
+    // Add active class to the clicked button
+    button.classList.add('active');
+}
+
+function showPlace1Boxes() {
+    document.getElementById("place1Boxes").style.display = "flex";
+    document.getElementById("place2Boxes").style.display = "none";
+}
+
+function showPlace2Boxes() {
+    document.getElementById("place2Boxes").style.display = "flex";
+    document.getElementById("place1Boxes").style.display = "none";
+}
+
+function hideButton(buttonId) {
+    document.getElementById(buttonId).style.display = "none"; // Hide the clicked button
+}
+
+function runPlace1Animation() {
+    setTimeout(() => {
+        changeBoxColor('box1', 'yellow');
+        setTimeout(() => {
+            changeBoxColor('box1', 'lightgray');
+        }, 10000);
+    }, 15000);
+
+    setTimeout(() => {
+        changeBoxColor('box1', 'yellow');
+        setTimeout(() => {
+            changeBoxColor('box1', 'lightgray');
+        }, 10000);
+    }, 30000);
+
+    setTimeout(() => {
+        changeBoxColor('box3', 'yellow');
+        setTimeout(() => {
+            changeBoxColor('box3', 'lightgray');
+        }, 10000);
+    }, 45000);
+}
+
+function runPlace2Animation() {
+    console.log("Running Place2 Animation...");  // Add a log to see if the function is called
+    setTimeout(() => {
+        changeBoxColor('box2', 'yellow');
+        setTimeout(() => {
+            changeBoxColor('box2', 'lightgray');
+        }, 10000);
+    }, 15000);
+
+    setTimeout(() => {
+        changeBoxColor('box3', 'yellow');
+        setTimeout(() => {
+            changeBoxColor('box3', 'lightgray');
+        }, 10000);
+    }, 30000);
+
+    setTimeout(() => {
+        changeBoxColor('box2', 'yellow');
+        setTimeout(() => {
+            changeBoxColor('box2', 'lightgray');
+        }, 10000);
+    }, 45000);
+}
+
+function changeBoxColor(boxId, color) {
+    document.getElementById(boxId).style.backgroundColor = color;
+}
+
+    </script>
+</body>
+</html> -->
+
+
+
