@@ -177,3 +177,54 @@ body {
     100% { transform: scale(1.1); }
 }
 
+
+/* Media Query for Mobile Screens (Portrait Mode) */
+@media screen and (max-width: 768px) {
+    .game-grid {
+        height: 90vh; /* Use more vertical space */
+        width: 100vw; /* Full width for mobile */
+        transform: scale(0.6); /* Scale down the entire grid */
+        transform-origin: top center; /* Scale from top to fit portrait */
+        margin-top: -10vh; /* Adjust for scaling offset */
+    }
+
+    .outer-oval {
+        width: 1100px; /* Keep original size, scaled by parent */
+        height: 400px;
+    }
+
+    .center-area {
+        width: 1000px; /* Keep original size, scaled by parent */
+        height: 350px;
+    }
+
+    .team-box {
+        width: 90px; /* Original size preserved */
+        height: 90px;
+    }
+
+    .team-box img {
+        width: 80px; /* Original size preserved */
+        height: 80px;
+    }
+
+    .bet-box {
+        font-size: 54px; /* Original size preserved */
+    }
+
+    .bet-box img {
+        width: 60px; /* Original size preserved */
+        height: 60px;
+    }
+
+    .game-prompt {
+        font-size: 48px; /* Original size preserved */
+        padding: 20px 40px;
+    }
+
+    #timer-prompt {
+        font-size: 64px; /* Original size preserved */
+        top: 10px; /* Slightly adjusted for mobile */
+        padding: 10px 20px;
+    }
+}
